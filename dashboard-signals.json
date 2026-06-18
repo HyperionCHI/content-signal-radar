@@ -1,35 +1,208 @@
 {
-  "generatedAt": "2026-05-05T01:02:33.185Z",
+  "generatedAt": "2026-06-18T03:15:48.516Z",
   "stats": {
     "podcastEpisodes": 1,
     "xBuilders": 35,
-    "totalTweets": 24,
-    "blogPosts": 12,
-    "highSignalCount": 1,
-    "autoResolvedCount": 3,
-    "feedGeneratedAt": "2026-05-04T08:26:33.142Z",
+    "totalTweets": 31,
+    "blogPosts": 4,
+    "highSignalCount": 13,
+    "autoResolvedCount": 5,
+    "feedGeneratedAt": "2026-06-17T08:13:23.213Z",
     "rawCounts": {
-      "x_tweet": 18,
-      "jike_post": 10,
-      "blog_post": 8,
+      "x_tweet": 26,
+      "blog_post": 3,
+      "jike_post": 8,
       "podcast_episode": 1
     },
     "postSeenCounts": {
-      "blog_post": 1,
-      "x_tweet": 4
-    },
-    "seenFilteredCounts": {
-      "x_tweet": 14,
-      "jike_post": 10,
-      "blog_post": 7,
+      "x_tweet": 26,
+      "blog_post": 3,
+      "jike_post": 8,
       "podcast_episode": 1
     },
+    "seenFilteredCounts": {
+      "x_tweet": 0,
+      "blog_post": 0,
+      "jike_post": 0,
+      "podcast_episode": 0
+    },
     "demotedCounts": {
-      "x_tweet": 3
+      "x_tweet": 5
     },
     "highSignalCounts": {
-      "blog_post": 1
+      "x_tweet": 11,
+      "blog_post": 1,
+      "jike_post": 1
     }
   },
-  "signals": []
+  "signals": [
+    {
+      "id": "https://x.com/zarazhangrui/status/2066936706281206165",
+      "source": "x",
+      "sourceName": "Zara Zhang",
+      "handle": "zarazhangrui",
+      "title": "Every other product right now is \"an AI agent that does everything in your work & life & ...",
+      "url": "https://x.com/zarazhangrui/status/2066936706281206165",
+      "summary": "Every other product right now is \"an AI agent that does everything in your work & life & integrates with everything.\" Cool, that's just Claude/Codex. If you want me to use your thing instead, it needs an opinion & a sou...",
+      "score": 103,
+      "publishedAt": "2026-06-16T17:31:27.000Z",
+      "topic": "both",
+      "needsReview": false,
+      "reviewNote": null
+    },
+    {
+      "id": "https://x.com/rauchg/status/2067106499449565265",
+      "source": "x",
+      "sourceName": "Guillermo Rauch",
+      "handle": "rauchg",
+      "title": "It’s time to ship",
+      "url": "https://x.com/rauchg/status/2067106499449565265",
+      "summary": "It’s time to ship",
+      "score": 93,
+      "publishedAt": "2026-06-17T04:46:09.000Z",
+      "topic": "product_signal",
+      "needsReview": false,
+      "reviewNote": "边界信号，分数尚可 — 保留"
+    },
+    {
+      "id": "https://x.com/joshwoodward/status/2067025851829330076",
+      "source": "x",
+      "sourceName": "Josh Woodward",
+      "handle": "joshwoodward",
+      "title": "🇧🇷World-changing AI companies are coming from Brazil. That’s why we’ve officially expan...",
+      "url": "https://x.com/joshwoodward/status/2067025851829330076",
+      "summary": "🇧🇷World-changing AI companies are coming from Brazil. That’s why we’ve officially expanded our Google AI Futures Fund to Brazil, partnering with venture capital leader Monashees to launch the Gama Fund. We’re looking ...",
+      "score": 84,
+      "publishedAt": "2026-06-16T23:25:41.000Z",
+      "topic": "both",
+      "needsReview": false,
+      "reviewNote": null
+    },
+    {
+      "id": "https://x.com/realmadhuguru/status/2066935654500671499",
+      "source": "x",
+      "sourceName": "Madhu Guru",
+      "handle": "realmadhuguru",
+      "title": "The real prize in the SpaceX-Cursor deal is the agentic harness that will become the core...",
+      "url": "https://x.com/realmadhuguru/status/2066935654500671499",
+      "summary": "The real prize in the SpaceX-Cursor deal is the agentic harness that will become the core for automating all knowledge work at scale. Here’s what SpaceX is getting: 1. Production-grade agentic harness -planning, context...",
+      "score": 80,
+      "publishedAt": "2026-06-16T17:27:16.000Z",
+      "topic": "product_signal",
+      "needsReview": false,
+      "reviewNote": null
+    },
+    {
+      "id": "https://x.com/garrytan/status/2067100549775032702",
+      "source": "x",
+      "sourceName": "Garry Tan",
+      "handle": "garrytan",
+      "title": "Which leads to… Bowen’s differentiation of self Low differentiation = highly reactive to ...",
+      "url": "https://x.com/garrytan/status/2067100549775032702",
+      "summary": "Which leads to… Bowen’s differentiation of self Low differentiation = highly reactive to others' emotional cues, loses self in relationships, can't hold boundaries under pressure — collapses into \"we-ness\" (everyone mus...",
+      "score": 79,
+      "publishedAt": "2026-06-17T04:22:30.000Z",
+      "topic": "x_angle",
+      "needsReview": false,
+      "reviewNote": null
+    },
+    {
+      "id": "https://claude.com/blog/claude-for-foundation-models",
+      "source": "blog",
+      "sourceName": "Claude Blog",
+      "handle": null,
+      "title": "Building intelligent apps for Apple platforms with Claude in the Foundation Models framework",
+      "url": "https://claude.com/blog/claude-for-foundation-models",
+      "summary": "Today we&#x27;re releasing Foundation Models framework support for Claude through a new Swift package that lets Apple developers use Apple&#x27;s Foundation Models framework to call Claude for more complex workflows. Ap...",
+      "score": 76,
+      "publishedAt": "Jun 08, 2026",
+      "topic": "product_signal",
+      "needsReview": false,
+      "reviewNote": null
+    },
+    {
+      "id": "https://x.com/levie/status/2066908002809221496",
+      "source": "x",
+      "sourceName": "Aaron Levie",
+      "handle": "levie",
+      "title": "The Cursor deal is symbolically quite significant. It was effectively the first mega succ...",
+      "url": "https://x.com/levie/status/2066908002809221496",
+      "summary": "The Cursor deal is symbolically quite significant. It was effectively the first mega success in the applied layer of AI. They firmly proved out the value proposition of having a deep domain focus, the role you play as a...",
+      "score": 75,
+      "publishedAt": "2026-06-16T15:37:23.000Z",
+      "topic": "both",
+      "needsReview": false,
+      "reviewNote": null
+    },
+    {
+      "id": "https://x.com/levie/status/2067070918300664161",
+      "source": "x",
+      "sourceName": "Aaron Levie",
+      "handle": "levie",
+      "title": "One of the biggest questions in AI is how far behind open weights models remain from clos...",
+      "url": "https://x.com/levie/status/2067070918300664161",
+      "summary": "One of the biggest questions in AI is how far behind open weights models remain from closed models at any given time. There are huge differences in market structures depending on whether open weights models remain 3 or ...",
+      "score": 74,
+      "publishedAt": "2026-06-17T02:24:45.000Z",
+      "topic": "both",
+      "needsReview": false,
+      "reviewNote": null
+    },
+    {
+      "id": "https://m.okjike.com/originalPosts/69f21ecbc2dc8bf83f8414c7",
+      "source": "podcast",
+      "sourceName": "汗青HQ",
+      "handle": "汗青HQ",
+      "title": "发布了: 垂类数据是垂类AI应用和模型的壁垒？未必。 Adobe被Claude Design吊着打很说明问题。 AGI面前，不能用传统那套逻辑思考了。",
+      "url": "https://m.okjike.com/originalPosts/69f21ecbc2dc8bf83f8414c7",
+      "summary": "垂类数据是垂类AI应用和模型的壁垒？未必。&lt;br&gt;Adobe被Claude Design吊着打很说明问题。&lt;br&gt;AGI面前，不能用传统那套逻辑思考了。",
+      "score": 72,
+      "publishedAt": "Wed, 29 Apr 2026 15:07:55 GMT",
+      "topic": "product_signal",
+      "needsReview": false,
+      "reviewNote": null
+    },
+    {
+      "id": "https://x.com/swyx/status/2067057648617538037",
+      "source": "x",
+      "sourceName": "Swyx",
+      "handle": "swyx",
+      "title": "@WorkOS @mattpocockuk @zackproser also doing great. AIE audience LOVES the workos content...",
+      "url": "https://x.com/swyx/status/2067057648617538037",
+      "summary": "@WorkOS @mattpocockuk @zackproser also doing great. AIE audience LOVES the workos content, they are doing something right https://t.co/nLZTQyAk1i",
+      "score": 70,
+      "publishedAt": "2026-06-17T01:32:02.000Z",
+      "topic": "x_angle",
+      "needsReview": false,
+      "reviewNote": null
+    },
+    {
+      "id": "https://x.com/petergyang/status/2067056979974160749",
+      "source": "x",
+      "sourceName": "Peter Yang",
+      "handle": "petergyang",
+      "title": "Publishing a new tutorial to make Codex or Claude Code your personal advisor using a skil...",
+      "url": "https://x.com/petergyang/status/2067056979974160749",
+      "summary": "Publishing a new tutorial to make Codex or Claude Code your personal advisor using a skill with 4 files. Plus, I managed to save Fable's advice too before it got restricted 🥲 📌 Subscribe to get the tutorial tmr: https...",
+      "score": 68,
+      "publishedAt": "2026-06-17T01:29:22.000Z",
+      "topic": "both",
+      "needsReview": false,
+      "reviewNote": null
+    },
+    {
+      "id": "https://x.com/zarazhangrui/status/2066994434953421226",
+      "source": "x",
+      "sourceName": "Zara Zhang",
+      "handle": "zarazhangrui",
+      "title": "You don’t have to chase the cool thing. Do whatever you’re already doing so well that it ...",
+      "url": "https://x.com/zarazhangrui/status/2066994434953421226",
+      "summary": "You don’t have to chase the cool thing. Do whatever you’re already doing so well that it becomes the cool thing. The cool thing is rarely cool when it starts. It becomes cool because someone went deep on something every...",
+      "score": 65,
+      "publishedAt": "2026-06-16T21:20:50.000Z",
+      "topic": "neither",
+      "needsReview": false,
+      "reviewNote": null
+    }
+  ]
 }

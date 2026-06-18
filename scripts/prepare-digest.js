@@ -4,6 +4,7 @@ import { readFile, writeFile } from 'fs/promises';
 import { existsSync } from 'fs';
 import { join } from 'path';
 import { homedir } from 'os';
+import { fileURLToPath } from 'url';
 
 const USER_DIR = join(homedir(), '.content-signal-radar');
 const CONFIG_PATH = join(USER_DIR, 'config.json');
@@ -1360,7 +1361,7 @@ async function main() {
     }
   }
 
-  const scriptDir = decodeURIComponent(new URL(import.meta.url).pathname).replace(/\/[^\/]+$/, '');
+  const scriptDir = fileURLToPath(new URL('.', import.meta.url));
   const rootDir = join(scriptDir, '..');
   const localPromptsDir = join(rootDir, 'prompts');
   const userPromptsDir = join(USER_DIR, 'prompts');
@@ -1487,8 +1488,8 @@ async function main() {
   // 写 dashboard 可读的风声快照
   try {
     const { writeFileSync } = await import('fs');
-    const { join, dirname } = await import('path');
-    const scriptDir = dirname(decodeURIComponent(new URL(import.meta.url).pathname));
+    const { join } = await import('path');
+    const scriptDir = fileURLToPath(new URL('.', import.meta.url));
     const dashboardSignals = {
       generatedAt: output.generatedAt,
       stats: output.stats,

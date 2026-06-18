@@ -1,16 +1,20 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "User configuration for Maple Signal Radar. Stored at ~/.follow-builders/config.json",
+  "description": "User configuration for Hyperion Signal Radar. Stored at ~/.follow-builders/config.json",
   "type": "object",
   "properties": {
-    "platform": {
+    "name": {
       "type": "string",
-      "enum": ["openclaw", "other"],
-      "description": "Detected platform: openclaw or other"
+      "default": "Hyperion 的风声雷达",
+      "description": "Name of this radar configuration"
     },
     "language": {
       "type": "string",
-      "enum": ["en", "zh", "bilingual"],
+      "enum": [
+        "en",
+        "zh",
+        "bilingual"
+      ],
       "default": "zh",
       "description": "Output language"
     },
@@ -19,77 +23,336 @@
       "default": "Asia/Shanghai",
       "description": "IANA timezone string"
     },
-    "frequency": {
-      "type": "string",
-      "enum": ["daily", "weekly"],
-      "default": "daily",
-      "description": "How often to deliver the radar"
-    },
-    "deliveryTime": {
-      "type": "string",
-      "default": "09:00",
-      "description": "Time of day to deliver in HH:MM format"
-    },
-    "weeklyDay": {
-      "type": "string",
-      "enum": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
-      "default": "monday",
-      "description": "Day of week for weekly delivery"
-    },
-    "delivery": {
-      "type": "object",
-      "properties": {
-        "method": {
-          "type": "string",
-          "enum": ["stdout", "telegram", "email"],
-          "default": "stdout"
-        },
-        "chatId": {
-          "type": "string"
-        },
-        "email": {
-          "type": "string"
-        }
-      }
-    },
     "focusTopics": {
       "type": "array",
       "description": "Topics the radar should prioritize",
-      "items": { "type": "string" },
-      "default": ["AI 产品", "agent", "内容机会", "个人品牌"]
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "AI Agent",
+        "AI Agents",
+        "Agentic Workflow",
+        "AI Product",
+        "AI Builder",
+        "AI Creator",
+        "LLM Workflow",
+        "LLM Engineering",
+        "AI Coding",
+        "Vibe Coding",
+        "Claude Code",
+        "Cursor",
+        "LangChain",
+        "RAG",
+        "Open Source LLM",
+        "独立开发",
+        "Indie Hacker",
+        "Indie Hacking",
+        "Bootstrapped Startup",
+        "Micro SaaS",
+        "Build in Public",
+        "Solo Founder",
+        "Product Launch",
+        "Product Hunt",
+        "冷启动",
+        "增长策略",
+        "Growth Marketing",
+        "SEO",
+        "Distribution",
+        "Pricing",
+        "Monetization",
+        "出海",
+        "Global SaaS",
+        "Overseas Product",
+        "B2B SaaS",
+        "Creator Tools",
+        "Developer Tools",
+        "市场需求",
+        "User Pain Points",
+        "Customer Discovery",
+        "Product Ideas",
+        "Startup Ideas",
+        "MVP",
+        "Requests for Startups",
+        "Reddit Research",
+        "Hacker News",
+        "Exploding Topics",
+        "Trend Discovery",
+        "个人品牌",
+        "Personal Brand",
+        "Creator Economy",
+        "Content Strategy",
+        "Writing Online",
+        "Newsletter",
+        "Audience Building",
+        "Knowledge Management",
+        "Second Brain",
+        "Productivity System",
+        "Habit Design",
+        "语言学习",
+        "Language Learning",
+        "English Learning",
+        "Japanese Learning",
+        "Multilingual Learning",
+        "Comprehensible Input",
+        "Immersion Learning",
+        "Shadowing",
+        "Spaced Repetition"
+      ]
     },
     "contentGoals": {
       "type": "array",
       "description": "What this radar is optimizing for",
       "items": {
         "type": "string",
-        "enum": ["x_posts", "xiaohongshu_topics", "product_insights", "learning"]
+        "enum": [
+          "market_opportunities",
+          "product_insights",
+          "growth_signals",
+          "tech_signals",
+          "content_ideas",
+          "x_posts",
+          "personal_systems",
+          "language_learning",
+          "action_items"
+        ]
       },
-      "default": ["x_posts", "xiaohongshu_topics", "product_insights"]
+      "default": [
+        "market_opportunities",
+        "product_insights",
+        "growth_signals",
+        "tech_signals",
+        "content_ideas",
+        "x_posts",
+        "personal_systems",
+        "language_learning",
+        "action_items"
+      ]
     },
     "outputSections": {
       "type": "array",
       "description": "Sections to include in the final output",
       "items": {
         "type": "string",
-        "enum": ["brief", "x_angles", "xiaohongshu_topics", "product_signals", "action_items", "raw_links"]
+        "enum": [
+          "brief",
+          "market_opportunities",
+          "product_signals",
+          "growth_signals",
+          "tech_signals",
+          "x_angles",
+          "x_drafts",
+          "learning_signals",
+          "action_items"
+        ]
       },
-      "default": ["brief", "x_angles", "xiaohongshu_topics", "product_signals", "action_items"]
+      "default": [
+        "brief",
+        "market_opportunities",
+        "product_signals",
+        "growth_signals",
+        "tech_signals",
+        "x_angles",
+        "x_drafts",
+        "learning_signals",
+        "action_items"
+      ]
+    },
+    "outputMode": {
+      "type": "string",
+      "enum": [
+        "balanced"
+      ],
+      "default": "balanced",
+      "description": "Controls the emphasis of the final radar output"
+    },
+    "sourceWeights": {
+      "type": "object",
+      "description": "Long-term trust weights for specific sources or creators",
+      "additionalProperties": {
+        "type": "number"
+      },
+      "default": {
+        "zarazhangrui": 1.3,
+        "_catwu": 1.25,
+        "karpathy": 1.2,
+        "rauchg": 1.2,
+        "leeerob": 1.2,
+        "simonw": 1.18,
+        "levelsio": 1.15,
+        "steipete": 1.15,
+        "chipro": 1.15,
+        "gregisenberg": 1.12,
+        "mckaywrigley": 1.12,
+        "petergyang": 1.1,
+        "hwchase17": 1.1,
+        "lilianweng": 1.1,
+        "tdinh_me": 1.05,
+        "yongfook": 1.05,
+        "marclou": 1.05,
+        "thedankoe": 1,
+        "naval": 0.95,
+        "lexfridman": 0.9,
+        "hubermanlab": 0.75
+      }
+    },
+    "sourceWeightReasons": {
+      "type": "object",
+      "description": "Reasons for source weights",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "default": {
+        "zarazhangrui": "高密度 AI builder、agent、AI 工作流信号，和你的产品与内容方向高度一致",
+        "_catwu": "产品视角和 builder 视角兼具，适合发现 AI 产品与创作者工具信号",
+        "karpathy": "LLM、AI Coding、技术范式变化的高权重来源，但不一定每天都有直接产品机会",
+        "rauchg": "Vercel 与前端平台视角强，适合观察 AI 应用开发范式变化",
+        "leeerob": "AI 产品、开发者工具、Vercel 生态和分发视角稳定",
+        "simonw": "LLM 工程实践、模型使用边界、AI 工具判断密度高",
+        "levelsio": "独立开发、出海、产品组合、分发和商业化视角强",
+        "steipete": "开发者工具、AI Coding、工程工作流洞察稳定",
+        "chipro": "AI Engineering 和生产级 AI 系统判断质量高",
+        "gregisenberg": "社区驱动产品、分发策略、AI 产品机会和内容角度较强",
+        "mckaywrigley": "AI 工具实战、agent、产品 demo 和 builder 信号较多",
+        "petergyang": "AI 产品经理视角、内容创作与产品判断结合较好",
+        "hwchase17": "LangChain、agent、AI 应用框架变化的源头信号",
+        "lilianweng": "深度 AI 技术文章质量高，适合技术趋势判断",
+        "tdinh_me": "独立开发、Build in Public 和产品设计信号稳定",
+        "yongfook": "Bootstrapped SaaS、独立开发和真实商业化经验",
+        "marclou": "快速发布、产品包装和独立开发冷启动信号强",
+        "thedankoe": "个人品牌和创作者系统参考价值有，但产品信号优先级不应过高",
+        "naval": "长期思考价值高，但日常行动信号密度不稳定",
+        "lexfridman": "长访谈信息量大，但提取成本高，权重不宜过高",
+        "hubermanlab": "个人系统参考价值有，但容易偏离产品雷达主线"
+      }
     },
     "scoring": {
       "type": "object",
       "description": "Simple weighting used during remixing",
       "properties": {
-        "relevance": { "type": "number", "default": 0.35 },
-        "writeability": { "type": "number", "default": 0.25 },
-        "actionability": { "type": "number", "default": 0.25 },
-        "novelty": { "type": "number", "default": 0.15 },
-        "minimum": { "type": "number", "default": 0.6 }
+        "relevance": {
+          "type": "number",
+          "default": 0.32,
+          "description": "How closely the signal matches the focus topics"
+        },
+        "writeability": {
+          "type": "number",
+          "default": 0.1,
+          "description": "Whether the signal can be turned into content"
+        },
+        "actionability": {
+          "type": "number",
+          "default": 0.26,
+          "description": "Whether the signal can become a concrete action"
+        },
+        "novelty": {
+          "type": "number",
+          "default": 0.12,
+          "description": "Whether the signal is new or counterintuitive"
+        },
+        "engagement": {
+          "type": "number",
+          "default": 0.05,
+          "description": "Whether the signal has meaningful audience engagement"
+        },
+        "recency": {
+          "type": "number",
+          "default": 0.15,
+          "description": "Whether the signal is recent enough to matter"
+        },
+        "minimum": {
+          "type": "number",
+          "default": 0.66,
+          "description": "Minimum score required for a signal to enter the main output"
+        },
+        "sourceWeightCap": {
+          "type": "number",
+          "default": 1.3,
+          "description": "Maximum multiplier cap applied from sourceWeights"
+        }
+      },
+      "default": {
+        "relevance": 0.32,
+        "writeability": 0.1,
+        "actionability": 0.26,
+        "novelty": 0.12,
+        "engagement": 0.05,
+        "recency": 0.15,
+        "minimum": 0.66,
+        "sourceWeightCap": 1.3
+      }
+    },
+    "limits": {
+      "type": "object",
+      "description": "Maximum number of items per output section",
+      "properties": {
+        "brief": {
+          "type": "number",
+          "default": 5,
+          "description": "Maximum number of items in the brief section"
+        },
+        "market_opportunities": {
+          "type": "number",
+          "default": 3,
+          "description": "Maximum number of market opportunity items"
+        },
+        "product_signals": {
+          "type": "number",
+          "default": 3,
+          "description": "Maximum number of product signal items"
+        },
+        "growth_signals": {
+          "type": "number",
+          "default": 2,
+          "description": "Maximum number of growth signal items"
+        },
+        "tech_signals": {
+          "type": "number",
+          "default": 3,
+          "description": "Maximum number of technical signal items"
+        },
+        "x_angles": {
+          "type": "number",
+          "default": 3,
+          "description": "Maximum number of X angle items"
+        },
+        "x_drafts": {
+          "type": "number",
+          "default": 2,
+          "description": "Maximum number of X draft items"
+        },
+        "learning_signals": {
+          "type": "number",
+          "default": 2,
+          "description": "Maximum number of learning signal items"
+        },
+        "action_items": {
+          "type": "number",
+          "default": 3,
+          "description": "Maximum number of action items"
+        },
+        "raw_links": {
+          "type": "number",
+          "default": 15,
+          "description": "Maximum number of raw links"
+        }
+      },
+      "default": {
+        "brief": 5,
+        "market_opportunities": 3,
+        "product_signals": 3,
+        "growth_signals": 2,
+        "tech_signals": 3,
+        "x_angles": 3,
+        "x_drafts": 2,
+        "learning_signals": 2,
+        "action_items": 3,
+        "raw_links": 15
       }
     },
     "onboardingComplete": {
       "type": "boolean",
-      "default": false
+      "default": true
     }
   }
 }

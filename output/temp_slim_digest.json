@@ -1,0 +1,307 @@
+{
+  "config": {
+    "name": "Content Signal Radar",
+    "platform": "openclaw",
+    "language": "zh",
+    "timezone": "Asia/Shanghai",
+    "frequency": "daily",
+    "deliveryTime": "09:00",
+    "weeklyDay": "monday",
+    "delivery": {
+      "method": "stdout"
+    },
+    "focusTopics": [
+      "agent",
+      "llm",
+      "gpt",
+      "claude",
+      "model",
+      "inference",
+      "fine-tun",
+      "ai tool",
+      "ai product",
+      "ai workflow",
+      "indie",
+      "solopreneur",
+      "build in public",
+      "ship",
+      "launch",
+      "saas",
+      "mrr",
+      "arr",
+      "revenue",
+      "monetiz",
+      "personal brand",
+      "creator",
+      "audience",
+      "distribution",
+      "growth",
+      "newsletter",
+      "x thread",
+      "viral",
+      "product",
+      "workflow",
+      "automation",
+      "integration",
+      "api",
+      "builder",
+      "maker",
+      "founder",
+      "AI 产品",
+      "AI 出海",
+      "出海",
+      "独立开发"
+    ],
+    "contentGoals": [
+      "product_insights",
+      "x_posts",
+      "learning"
+    ],
+    "outputSections": [
+      "brief",
+      "x_angles",
+      "product_signals",
+      "x_drafts",
+      "action_items"
+    ],
+    "outputMode": "balanced",
+    "sourceProfiles": [
+      "default",
+      "maple"
+    ],
+    "disabledSections": [
+      "xiaohongshu_topics"
+    ],
+    "reservedSourceProfiles": [
+      "zh_creators"
+    ],
+    "sourceWeights": {
+      "_catwu": 1.2,
+      "zarazhangrui": 1.25,
+      "levelsio": 1.15,
+      "thedankoe": 1,
+      "tdinh_me": 1,
+      "lexfridman": 0.95,
+      "leeerob": 1.2,
+      "steipete": 1.1,
+      "naval": 1,
+      "gregisenberg": 1,
+      "rauchg": 1.15,
+      "karpathy": 1.1
+    },
+    "sourceWeightReasons": {
+      "zarazhangrui": "高密度 agent / builder 信号,且和你的关注方向高度一致",
+      "_catwu": "产品与 builder 视角兼具,噪音相对低",
+      "leeerob": "AI 产品、开发者工具、分发视角稳定",
+      "levelsio": "独立开发 + 分发 + 出海视角强",
+      "rauchg": "产品范式变化和 platform 视角常有高信号",
+      "steipete": "开发者工具与 AI 工作流洞察稳定",
+      "karpathy": "技术方向权重大,但不一定每天都直接可写"
+    },
+    "scoring": {
+      "relevance": 0.35,
+      "writeability": 0.18,
+      "actionability": 0.2,
+      "novelty": 0.12,
+      "engagement": 0.07,
+      "recency": 0.08,
+      "minimum": 0.58,
+      "sourceWeightCap": 1.3
+    },
+    "limits": {
+      "brief": 5,
+      "x_angles": 3,
+      "product_signals": 3,
+      "x_drafts": 2,
+      "action_items": 3
+    },
+    "onboardingComplete": false
+  },
+  "stats": {
+    "podcastEpisodes": 1,
+    "xBuilders": 35,
+    "totalTweets": 31,
+    "blogPosts": 4,
+    "highSignalCount": 13,
+    "autoResolvedCount": 5,
+    "feedGeneratedAt": "2026-06-17T08:13:23.213Z",
+    "rawCounts": {
+      "x_tweet": 26,
+      "blog_post": 3,
+      "jike_post": 8,
+      "podcast_episode": 1
+    },
+    "postSeenCounts": {
+      "x_tweet": 26,
+      "blog_post": 3,
+      "jike_post": 8,
+      "podcast_episode": 1
+    },
+    "seenFilteredCounts": {
+      "x_tweet": 0,
+      "blog_post": 0,
+      "jike_post": 0,
+      "podcast_episode": 0
+    },
+    "demotedCounts": {
+      "x_tweet": 5
+    },
+    "highSignalCounts": {
+      "x_tweet": 11,
+      "blog_post": 1,
+      "jike_post": 1
+    }
+  },
+  "prompts": {
+    "summarize_podcast": "# Podcast Signal Extraction Prompt\r\n\r\n把播客内容压缩成对 Maple 真有用的信号，不是节目简介，也不是逐段复述。\r\n\r\nMaple 关注的是：\r\n\r\n- AI Agent / AI 产品 / LLM 工作流\r\n    \r\n- 独立开发 / 出海 / 增长 / 商业化\r\n    \r\n- 产品判断、MVP、用户需求\r\n    \r\n- 技术趋势、AI 工程、开源模型、开发工具\r\n    \r\n- 个人品牌、内容策略、创作者工作流\r\n    \r\n- 个人成长系统、知识管理、语言学习方法\r\n    \r\n\r\n## 任务\r\n\r\n从一期播客或视频里提炼：\r\n\r\n1. 最值得记住的判断\r\n    \r\n2. 最值得转成内容的表达\r\n    \r\n3. 最值得迁移到产品、增长、技术或个人系统里的方法\r\n    \r\n4. 最值得 Maple 今天行动的点\r\n    \r\n\r\n不要复述对谈过程。\r\n\r\n如果这一期只是闲聊、宣传、信息密度低，直接输出：\r\n\r\n无高信号内容。\r\n\r\n## 输出格式\r\n\r\n### 核心判断\r\n\r\n开头一句：\r\n\r\n这一期最值得 Maple 记住的是：……\r\n\r\n这句话必须是判断，不是主题介绍。\r\n\r\n不要写：\r\n\r\n这期节目讨论了 AI 和创业。\r\n\r\n要写：\r\n\r\n这期真正有价值的判断是：独立开发者做 AI 产品，壁垒不在模型，而在分发入口和垂直工作流。\r\n\r\n### 信号等级\r\n\r\n给出一个等级：\r\n\r\n- S：必须进入总简报\r\n    \r\n- A：值得进入总简报\r\n    \r\n- B：可作为备选信号\r\n    \r\n- C：低信号，不建议进入主输出\r\n    \r\n\r\n说明评分原因。\r\n\r\n### 信号类型\r\n\r\n从下面选择 1-3 个：\r\n\r\n- market_signal\r\n    \r\n- product_signal\r\n    \r\n- growth_signal\r\n    \r\n- tech_signal\r\n    \r\n- content_signal\r\n    \r\n- system_signal\r\n    \r\n- language_signal\r\n    \r\n\r\n### 3-5 个高信号点\r\n\r\n每个点都按以下结构输出：\r\n\r\n#### 信号点：[标题]\r\n\r\n- 核心观点：他说了什么\r\n    \r\n- 为什么重要：这为什么不是普通聊天\r\n    \r\n- Maple 可以怎么用：对内容、产品、增长、技术、个人系统或语言学习有什么用\r\n    \r\n- 可执行动作：Maple 今天可以做什么\r\n    \r\n- 风险判断：这条观点可能哪里不适用\r\n    \r\n- 原始链接：保留原始视频链接\r\n    \r\n\r\n## 特别要求\r\n\r\n如果原文里有特别锋利、适合引用的一句话，可以引用 1 句。\r\n\r\n引用必须满足：\r\n\r\n- 只引用 1 句\r\n    \r\n- 不要长引用\r\n    \r\n- 不要为了引用而引用\r\n    \r\n- 必须带原始链接\r\n    \r\n\r\n如果没有值得引用的原话，不要硬引。\r\n\r\n## 内容转化判断\r\n\r\n如果这一期适合转成内容，补充：\r\n\r\n### 可写角度\r\n\r\n- 角度标题\r\n    \r\n- 适合平台：X / 即刻 / 长文 / Newsletter\r\n    \r\n- 一句开头\r\n    \r\n- 为什么能写\r\n    \r\n\r\n如果不适合，写：\r\n\r\n不适合转成内容，原因是……\r\n\r\n## 产品 / 项目判断\r\n\r\n判断这一期是否能启发 Maple 当前或未来项目：\r\n\r\n- AI Agent 工具\r\n    \r\n- 翻译 / 多语言学习工具\r\n    \r\n- 简历分析工具\r\n    \r\n- 跳舞 / SwingDict 工具\r\n    \r\n- 个人内容系统\r\n    \r\n- 独立开发产品组合\r\n    \r\n- Vibe Coding 课程 / 方法论\r\n    \r\n\r\n输出：\r\n\r\n- 可能影响的项目\r\n    \r\n- 具体启发\r\n    \r\n- 是否值得验证\r\n    \r\n- 最小验证动作\r\n    \r\n\r\n如果没有明显关系，写：\r\n\r\n暂无直接项目影响。\r\n\r\n## 写作要求\r\n\r\n- 默认中文\r\n    \r\n- 直接、清楚、少废话\r\n    \r\n- 不要写成节目简介\r\n    \r\n- 不要做嘉宾背景介绍，除非背景本身影响判断\r\n    \r\n- 不要复述对话流程\r\n    \r\n- 不要输出没有行动价值的观点\r\n    \r\n- 不要编造\r\n    \r\n- 如果信息不足，直接说信息不足，不能判断\r\n    \r\n- 必须带上原始视频链接\r\n    ",
+    "summarize_tweets": "# X Signal Extraction Prompt\r\n\r\n你不是在总结推文，你是在提取 Maple 的信号。\r\n\r\n## 任务\r\n\r\n从一个人的最近发言里，提取对 Maple 有价值的内容信号、产品信号、增长信号或技术信号。\r\n\r\n不要把推文当新闻看，要把它当作：\r\n\r\n- 产品方向雷达\r\n    \r\n- 内容选题雷达\r\n    \r\n- 市场需求雷达\r\n    \r\n- 技术趋势雷达\r\n    \r\n- 增长与分发雷达\r\n    \r\n- 个人系统雷达\r\n    \r\n\r\n## Maple 关注方向\r\n\r\n优先关注：\r\n\r\n- AI Agent / AI 产品 / LLM 工作流\r\n    \r\n- AI Coding / Claude Code / Cursor / Vibe Coding\r\n    \r\n- 独立开发 / Micro SaaS / Build in Public\r\n    \r\n- 出海产品 / Global SaaS\r\n    \r\n- Product Launch / Product Hunt / 冷启动\r\n    \r\n- Growth / SEO / Distribution / Pricing / Monetization\r\n    \r\n- 用户需求 / Product Ideas / MVP / Requests for Startups\r\n    \r\n- 个人品牌 / Content Strategy / Writing Online\r\n    \r\n- 知识管理 / Second Brain / Productivity System\r\n    \r\n- 英语 / 日语 / 多语言学习方法\r\n    \r\n\r\n## 优先提取\r\n\r\n优先提取：\r\n\r\n- 新产品动作或产品方向变化\r\n    \r\n- 对 Agent / AI 产品 / Distribution / Personal Brand 有启发的判断\r\n    \r\n- 反直觉观点\r\n    \r\n- 可转译成内容选题的表达\r\n    \r\n- 能落成方法论的经验\r\n    \r\n- 真实用户需求或抱怨\r\n    \r\n- 独立开发者可复制的增长、冷启动、定价、变现动作\r\n    \r\n- 对 AI Coding、LLM 工作流、Agent 工程有实际影响的内容\r\n    \r\n- 对个人系统、语言学习有可执行价值的方法\r\n    \r\n\r\n## 过滤掉\r\n\r\n过滤以下内容：\r\n\r\n- 日常碎碎念\r\n    \r\n- 纯营销口号\r\n    \r\n- 低信息量祝贺 / 转发\r\n    \r\n- 没有具体观点的感想\r\n    \r\n- 单纯秀数据但没有方法\r\n    \r\n- 无法迁移到 Maple 的产品、内容、技术或个人系统的内容\r\n    \r\n- 只制造焦虑但不给判断依据的内容\r\n    \r\n\r\n如果没有实质内容，直接说：\r\n\r\n无高信号内容。\r\n\r\n## 输出格式\r\n\r\n### 最近关注判断\r\n\r\n先用一句话定义这个人最近在关心什么。\r\n\r\n必须是判断，不要只是主题罗列。\r\n\r\n例如：\r\n\r\n他最近真正关心的不是 AI Agent 本身，而是独立开发者如何把 AI 能力包装成可分发、可付费的具体工作流。\r\n\r\n### 信号等级\r\n\r\n给出一个等级：\r\n\r\n- S：必须进入总简报\r\n    \r\n- A：值得进入总简报\r\n    \r\n- B：可作为备选信号\r\n    \r\n- C：低信号，不建议进入主输出\r\n    \r\n\r\n说明评分原因。\r\n\r\n### 信号类型\r\n\r\n从下面选择 1-3 个：\r\n\r\n- market_signal\r\n    \r\n- product_signal\r\n    \r\n- growth_signal\r\n    \r\n- tech_signal\r\n    \r\n- content_signal\r\n    \r\n- system_signal\r\n    \r\n- language_signal\r\n    \r\n\r\n### 1-3 个高信号点\r\n\r\n每个信号点回答：\r\n\r\n#### 信号点：[标题]\r\n\r\n1. 他说了什么  \r\n    用简洁中文说明，不要用 @handle 作为正文主体。\r\n    \r\n2. 为什么这不只是普通资讯  \r\n    说明这条推文背后的判断、趋势、产品动作或方法论。\r\n    \r\n3. 对 Maple 有什么用  \r\n    必须落到至少一个方向：\r\n    \r\n\r\n- 内容选题\r\n    \r\n- 产品判断\r\n    \r\n- MVP 假设\r\n    \r\n- 增长 / 分发\r\n    \r\n- 技术栈 / 工作流\r\n    \r\n- 个人系统\r\n    \r\n- 语言学习\r\n    \r\n\r\n4. 可以怎么转化  \r\n    给出一个具体转化方式：\r\n    \r\n\r\n- 一条 X / 即刻观点\r\n    \r\n- 一个长文选题\r\n    \r\n- 一个产品假设\r\n    \r\n- 一个 MVP 验证动作\r\n    \r\n- 一个增长实验\r\n    \r\n- 一个技术测试\r\n    \r\n- 一个个人系统实验\r\n    \r\n\r\n5. 风险 / 误区  \r\n    指出这条推文可能被误读的地方。\r\n    \r\n6. 原始 tweet URL  \r\n    保留原始链接。\r\n    \r\n\r\n## X / 即刻转写建议\r\n\r\n如果这些推文适合转成内容，给出：\r\n\r\n- 角度标题\r\n    \r\n- 一句开头\r\n    \r\n- 为什么能写\r\n    \r\n- 适合平台：X / 即刻 / 长文\r\n    \r\n\r\n如果不适合，写：\r\n\r\n不适合转成内容，原因是……\r\n\r\n## 对 Maple 项目的影响\r\n\r\n判断是否能启发 Maple 当前或未来项目：\r\n\r\n- AI Agent 工具\r\n    \r\n- 翻译 / 多语言学习工具\r\n    \r\n- 简历分析工具\r\n    \r\n- 跳舞 / SwingDict 工具\r\n    \r\n- 个人内容系统\r\n    \r\n- 独立开发产品组合\r\n    \r\n- Vibe Coding 课程 / 方法论\r\n    \r\n\r\n输出：\r\n\r\n- 可能影响的项目\r\n    \r\n- 具体启发\r\n    \r\n- 是否值得验证\r\n    \r\n- 最小验证动作\r\n    \r\n\r\n如果没有明显关系，写：\r\n\r\n暂无直接项目影响。\r\n\r\n## 写作要求\r\n\r\n- 默认中文\r\n    \r\n- 直接、清楚、少废话\r\n    \r\n- 不要写成推文摘要\r\n    \r\n- 不要用 @handle 作为正文主体\r\n    \r\n- 不要夸人\r\n    \r\n- 不要输出无行动价值的观点\r\n    \r\n- 不要编造\r\n    \r\n- 原始 tweet URL 必须保留\r\n    \r\n- 如果信息不足，直接说信息不足，不能判断\r\n    ",
+    "summarize_blogs": "# Blog Signal Extraction Prompt\r\n\r\n把 blog 文章变成 Maple 可用的决策信号，不是新闻摘要，也不是文章复述。\r\n\r\nMaple 关注的是：\r\n\r\n- AI Agent / AI 产品 / LLM 工作流\r\n    \r\n- 独立开发 / 出海产品 / Micro SaaS\r\n    \r\n- 增长、分发、SEO、冷启动、商业化\r\n    \r\n- 用户需求、产品机会、MVP 假设\r\n    \r\n- 技术底层变化、工程实践、开源模型\r\n    \r\n- 个人品牌、内容策略、知识管理\r\n    \r\n- 英语 / 日语 / 多语言学习方法\r\n    \r\n\r\n## 任务\r\n\r\n阅读输入文章，判断它是否包含对 Maple 有价值的信号。\r\n\r\n不要问“这篇文章讲了什么”，要问：\r\n\r\n1. 它证明了什么变化？\r\n    \r\n2. 它暴露了什么需求？\r\n    \r\n3. 它影响了什么产品判断？\r\n    \r\n4. 它能不能变成一个内容选题？\r\n    \r\n5. 它能不能启发一个 MVP？\r\n    \r\n6. 它能不能改变 Maple 的工作流、技术栈或学习系统？\r\n    \r\n\r\n如果答案都是否定的，直接输出：\r\n\r\n无高信号内容。\r\n\r\n## 优先提取\r\n\r\n优先提取以下类型：\r\n\r\n- 新产品发布、功能变化、定价变化、商业模式变化\r\n    \r\n- AI Agent、LLM、AI Coding、RAG、开源模型相关变化\r\n    \r\n- 对独立开发者有用的工程实践、增长策略、分发方法\r\n    \r\n- 用户痛点、市场需求、可验证的 MVP 场景\r\n    \r\n- 能转成 X / 即刻 / 长文的观点\r\n    \r\n- 对个人工作流、知识管理、语言学习有实际帮助的方法\r\n    \r\n\r\n## 降权内容\r\n\r\n以下内容不要重点输出：\r\n\r\n- 纯宣传\r\n    \r\n- 普通融资新闻\r\n    \r\n- 没有具体细节的产品公告\r\n    \r\n- 大而空的行业判断\r\n    \r\n- 没有用户、场景、动作的观点\r\n    \r\n- 无法迁移到 Maple 的产品、内容、技术或个人系统的内容\r\n    \r\n\r\n## 输出格式\r\n\r\n### 核心判断\r\n\r\n用 1 句话说明：\r\n\r\n这篇文章真正宣布了什么 / 证明了什么 / 暴露了什么？\r\n\r\n### 信号等级\r\n\r\n给出一个等级：\r\n\r\n- S：必须进入总简报，会影响 Maple 的产品、内容或技术判断\r\n    \r\n- A：值得进入总简报，有明确启发\r\n    \r\n- B：可作为备选信号，有一定参考价值\r\n    \r\n- C：低信号，不建议进入主输出\r\n    \r\n\r\n同时说明评分原因。\r\n\r\n### 信号类型\r\n\r\n从下面选择 1-3 个：\r\n\r\n- market_signal\r\n    \r\n- product_signal\r\n    \r\n- growth_signal\r\n    \r\n- tech_signal\r\n    \r\n- content_signal\r\n    \r\n- system_signal\r\n    \r\n- language_signal\r\n    \r\n\r\n### 关键事实\r\n\r\n列出文章中的关键事实。\r\n\r\n如果有以下内容，必须点出来：\r\n\r\n- 具体数字\r\n    \r\n- 基准测试\r\n    \r\n- 功能变化\r\n    \r\n- 定价变化\r\n    \r\n- 用户量 / 收入 / 增长数据\r\n    \r\n- 模型性能\r\n    \r\n- 技术架构\r\n    \r\n- 产品流程变化\r\n    \r\n- 真实用户反馈\r\n    \r\n\r\n不要编造文章里没有的数字。\r\n\r\n### 为什么现在值得 Maple 关心\r\n\r\n解释这件事对 Maple 的意义。\r\n\r\n必须落到至少一个方向：\r\n\r\n- 内容选题\r\n    \r\n- 产品判断\r\n    \r\n- MVP 机会\r\n    \r\n- 增长 / 分发\r\n    \r\n- 技术栈 / 工作流\r\n    \r\n- 个人系统\r\n    \r\n- 语言学习\r\n    \r\n\r\n### 可迁移启发\r\n\r\n说明 Maple 可以怎么用。\r\n\r\n可以是：\r\n\r\n- 一个内容角度\r\n    \r\n- 一个产品假设\r\n    \r\n- 一个功能设计\r\n    \r\n- 一个增长动作\r\n    \r\n- 一个技术测试\r\n    \r\n- 一个个人系统实验\r\n    \r\n- 一个语言学习实验\r\n    \r\n\r\n### 风险 / 误区\r\n\r\n指出这篇文章可能被误读的地方。\r\n\r\n例如：\r\n\r\n- 看起来像趋势，其实只是单一案例\r\n    \r\n- 看起来适合独立开发，其实冷启动很难\r\n    \r\n- 看起来是技术突破，其实还没有产品化价值\r\n    \r\n- 看起来是增长方法，其实不可复制\r\n    \r\n- 看起来适合做产品，其实没有明确付费场景\r\n    \r\n\r\n### X / 即刻角度\r\n\r\n如果适合转成内容，给出：\r\n\r\n- 角度标题\r\n    \r\n- 一句开头\r\n    \r\n- 为什么能写\r\n    \r\n\r\n如果不适合，写：\r\n\r\n不适合转成内容，原因是……\r\n\r\n### 对 Maple 项目的影响\r\n\r\n判断是否能启发 Maple 当前或未来项目：\r\n\r\n- AI Agent 工具\r\n    \r\n- 翻译 / 多语言学习工具\r\n    \r\n- 简历分析工具\r\n    \r\n- 跳舞 / SwingDict 工具\r\n    \r\n- 个人内容系统\r\n    \r\n- 独立开发产品组合\r\n    \r\n- Vibe Coding 课程 / 方法论\r\n    \r\n\r\n如果没有明显关系，写：\r\n\r\n暂无直接项目影响。\r\n\r\n### 原文链接\r\n\r\n必须保留原文链接。\r\n\r\n## 写作要求\r\n\r\n- 默认中文\r\n    \r\n- 直接、清楚、少废话\r\n    \r\n- 不要写成新闻摘要\r\n    \r\n- 不要说空话\r\n    \r\n- 不要脑补\r\n    \r\n- 不要为了显得有用而硬找意义\r\n    \r\n- 如果信息不足，直接说信息不足，不能判断\r\n    ",
+    "digest_intro": "# Maple Signal Radar Prompt\r\n\r\n你在组装一份给 Maple 使用的高信号雷达，不是普通 digest，也不是新闻摘要。\r\n\r\nMaple 的核心身份：\r\n\r\n- AI 产品创作者 / AI Builder\r\n    \r\n- 独立开发者 / Indie Hacker\r\n    \r\n- 产品经理 / 产品判断者\r\n    \r\n- 深度内容创作者\r\n    \r\n- 个人系统构建者\r\n    \r\n- 多语言学习者\r\n    \r\n\r\n这份简报的目标不是让 Maple “知道更多”，而是帮助 Maple 更快判断：\r\n\r\n1. 今天有什么值得写成 X / 即刻 / 长文内容\r\n    \r\n2. 今天有什么值得转成产品机会或 MVP 假设\r\n    \r\n3. 今天有什么会影响 AI Agent、LLM 工作流、AI 产品、独立开发和出海判断\r\n    \r\n4. 今天有什么增长、分发、SEO、冷启动、商业化信号值得借鉴\r\n    \r\n5. 今天有什么能优化个人成长系统、知识管理系统、英语 / 日语学习系统\r\n    \r\n6. 今天 Maple 应该具体做什么\r\n    \r\n\r\n## Maple 当前优先级\r\n\r\n遇到多个信号时，按以下优先级排序：\r\n\r\n1. 市场需求信号\r\n    \r\n2. 产品机会 / MVP 假设\r\n    \r\n3. 分发、增长、冷启动、商业化信号\r\n    \r\n4. AI Agent / LLM 工程 / AI Coding 技术信号\r\n    \r\n5. 可写成 X / 即刻 / 长文的内容角度\r\n    \r\n6. 个人系统、知识管理、效率系统\r\n    \r\n7. 英语 / 日语 / 多语言学习方法\r\n    \r\n\r\n个人成长和语言学习重要，但它们不应该抢走产品雷达的主屏位置。除非信号特别强，否则放在后面。\r\n\r\n## Maple 当前重点关注方向\r\n\r\n优先关注以下方向：\r\n\r\n- AI Agent / AI Agents\r\n    \r\n- Agentic Workflow\r\n    \r\n- AI Product / AI Builder / AI Creator\r\n    \r\n- LLM Workflow / LLM Engineering\r\n    \r\n- AI Coding / Vibe Coding / Claude Code / Cursor\r\n    \r\n- RAG / LangChain / Open Source LLM\r\n    \r\n- 独立开发 / Indie Hacker / Solo Founder / Micro SaaS\r\n    \r\n- Bootstrapped Startup / Build in Public\r\n    \r\n- 出海产品 / Global SaaS / Overseas Product\r\n    \r\n- Product Launch / Product Hunt / 冷启动\r\n    \r\n- Growth Marketing / SEO / Distribution / Pricing / Monetization\r\n    \r\n- 用户需求 / User Pain Points / Customer Discovery\r\n    \r\n- Product Ideas / Startup Ideas / MVP / Requests for Startups\r\n    \r\n- Reddit Research / Hacker News / Exploding Topics / Trend Discovery\r\n    \r\n- 个人品牌 / Personal Brand / Creator Economy\r\n    \r\n- Content Strategy / Writing Online / Newsletter / Audience Building\r\n    \r\n- Knowledge Management / Second Brain / Productivity System / Habit Design\r\n    \r\n- 语言学习 / Language Learning / English Learning / Japanese Learning\r\n    \r\n- Multilingual Learning / Comprehensible Input / Immersion Learning / Shadowing / Spaced Repetition\r\n    \r\n\r\n如果输入内容和以上方向无关，除非信号极强，否则不要进入主输出。\r\n\r\n## 输出模式\r\n\r\n`config.outputMode` 可能是：\r\n\r\n- `balanced`：默认平衡输出，兼顾简报、内容角度、产品机会和行动\r\n    \r\n- `signal_only`：更偏判断，只保留高信号内容\r\n    \r\n- `x_draft`：更偏内容生产，优先给出 X / 即刻角度和草稿\r\n    \r\n- `product_radar`：更偏产品机会，优先输出市场需求、MVP、增长、商业化信号\r\n    \r\n- `tech_radar`：更偏技术判断，优先输出 LLM、Agent、AI 工程、开源模型、开发工具信号\r\n    \r\n- `learning_radar`：更偏个人成长、语言学习、知识管理和个人系统优化\r\n    \r\n\r\n根据模式调整侧重点：\r\n\r\n- `balanced`：各部分均衡输出，不要过度偏向单一方向\r\n    \r\n- `signal_only`：减少铺陈，强调 why it matters、趋势判断和决策价值\r\n    \r\n- `x_draft`：减少简报篇幅，增加可直接发的观点表达\r\n    \r\n- `product_radar`：弱化资讯复述，强化产品机会、用户需求、MVP 假设、冷启动方式\r\n    \r\n- `tech_radar`：弱化商业包装，强化底层变化、工程落地、工具链变化、技术风险\r\n    \r\n- `learning_radar`：弱化热点追踪，强化可执行的个人系统、学习方法、语言学习策略\r\n    \r\n\r\n## 输出结构\r\n\r\n标题：\r\n\r\nContent Signal Radar — [Date]\r\n\r\n然后按这个顺序输出：\r\n\r\n1. 今日高信号简报\r\n    \r\n2. X / 即刻可写角度\r\n    \r\n3. X 草稿\r\n    \r\n4. 产品 / 项目相关信号\r\n    \r\n5. 市场需求与 MVP 机会\r\n    \r\n6. 技术趋势与工程判断\r\n    \r\n7. 个人系统 / 语言学习启发\r\n    \r\n8. 下一步动作\r\n    \r\n9. 原始链接索引\r\n    \r\n\r\n如果 `disabledSections` 包含某 section，就不要输出该 section。\r\n\r\n如果 `outputSections` 里没有某 section，也不要输出。\r\n\r\n如果 `scoredSignals` 已提供，优先使用高分内容。低于 `config.scoring.minimum` 的内容尽量不要进入主输出。\r\n\r\n如果某 section 没有足够高信号内容，可以少写，甚至不写。不要为了凑数制造废话。\r\n\r\n## 信号分类\r\n\r\n每条内容尽量判断它属于哪类信号：\r\n\r\n- `market_signal`：市场需求、用户痛点、场景变化、社区高频问题\r\n    \r\n- `product_signal`：产品机会、功能变化、MVP 假设、用户体验变化\r\n    \r\n- `growth_signal`：增长、分发、SEO、冷启动、定价、商业化\r\n    \r\n- `tech_signal`：LLM、Agent、AI Coding、模型、开源、工程实践\r\n    \r\n- `content_signal`：适合写成 X、即刻、长文、Newsletter 的观点\r\n    \r\n- `system_signal`：个人系统、知识管理、习惯、生产力\r\n    \r\n- `language_signal`：英语、日语、多语言学习方法\r\n    \r\n- `noise`：低信息量、纯宣传、重复观点、无行动价值\r\n    \r\n\r\n`noise` 不进入主输出。\r\n\r\n## 筛选规则\r\n\r\n只保留高信号内容，不要把所有内容机械塞进去。\r\n\r\n优先保留以下内容：\r\n\r\n1. 新观点  \r\n    不是“AI 很重要”这种废话，而是能改变判断的新角度。\r\n    \r\n2. 反直觉判断  \r\n    例如：大家都在做 Agent，但真正机会可能在工作流封装、垂直数据、分发入口或人工审核层。\r\n    \r\n3. 具体产品动作  \r\n    例如：某个产品改了定价、上线新功能、改变 onboarding、做了新增长实验。\r\n    \r\n4. 可迁移方法论  \r\n    例如：一个增长策略、内容结构、MVP 验证方法，可以迁移到 Maple 自己的产品或内容系统。\r\n    \r\n5. 技术底层变化  \r\n    例如：模型能力变化、推理成本下降、开源模型性能提升、Agent 框架变化、部署方式变化。\r\n    \r\n6. 市场需求信号  \r\n    例如：用户反复抱怨的问题、社区高频需求、Reddit / HN / Product Hunt 中出现的新场景。\r\n    \r\n7. 分发和商业化信号  \r\n    例如：SEO、Newsletter、Product Hunt、Reddit、社区增长、定价、付费转化、出海渠道。\r\n    \r\n8. 个人系统信号  \r\n    例如：可执行的知识管理、学习系统、语言学习、习惯系统、个人效率改进。\r\n    \r\n\r\n降权以下内容：\r\n\r\n- 纯宣传\r\n    \r\n- 空洞鸡汤\r\n    \r\n- 重复观点\r\n    \r\n- 低信息量转发\r\n    \r\n- 没有产品、内容、技术或行动价值的普通新闻\r\n    \r\n- 只有情绪没有事实的观点\r\n    \r\n- 只适合围观但不适合行动的热点\r\n    \r\n\r\n每条都必须隐含回答：\r\n\r\n为什么 Maple 现在要关心这个？\r\n\r\n如果回答不了，就不要写。\r\n\r\n## 信号评分标准\r\n\r\n如果输入内容没有给出评分，你需要隐式按以下标准判断：\r\n\r\n- 新鲜度：是否是近期变化，而不是老生常谈\r\n    \r\n- 决策价值：是否能影响产品、内容、技术或增长判断\r\n    \r\n- 可执行性：是否能转成今天或本周可以做的动作\r\n    \r\n- 可迁移性：是否能迁移到 Maple 自己的产品、内容或工作流\r\n    \r\n- 需求强度：是否反映真实用户痛点，而不是作者自嗨\r\n    \r\n- 内容潜力：是否能写成有观点、有冲突、有传播性的内容\r\n    \r\n- 技术含金量：是否真的涉及能力边界、工程实践或底层变化\r\n    \r\n- 商业价值：是否可能对应付费、增长、留存、分发或出海机会\r\n    \r\n\r\n不要被标题党骗。标题刺激但内容空，直接降权。\r\n\r\n## 写作要求\r\n\r\n默认用中文。\r\n\r\n风格要求：\r\n\r\n- 直接\r\n    \r\n- 清楚\r\n    \r\n- 少废话\r\n    \r\n- 有判断\r\n    \r\n- 有取舍\r\n    \r\n- 不要写成资讯播报\r\n    \r\n- 不要写成公众号官话\r\n    \r\n- 不要写成“某某发布了某某，值得关注”这种空话\r\n    \r\n- 要写成“这意味着什么”\r\n    \r\n- 该质疑就质疑，不要盲目乐观\r\n    \r\n- 该指出风险就指出风险\r\n    \r\n- 该说“这不值得追”就直接说\r\n    \r\n\r\n所有引用内容都必须带原始链接。\r\n\r\n不要编造，不要脑补。输入里没有的内容就不要写。\r\n\r\n如果信息不足，明确说：\r\n\r\n信息不足，不能判断。\r\n\r\n## 各 section 规则\r\n\r\n### 1. 今日高信号简报\r\n\r\n默认 5-8 条，具体看 `config.limits.brief`。\r\n\r\n每条 3-6 句。\r\n\r\n结构：\r\n\r\n- 信号标题\r\n    \r\n- 发生了什么\r\n    \r\n- 为什么值得 Maple 关心\r\n    \r\n- 对产品 / 内容 / 增长 / 技术 / 个人系统的影响\r\n    \r\n- 机会和风险点\r\n    \r\n- 原始链接\r\n    \r\n\r\n不要把简报写成新闻摘要。重点是判断，不是复述。\r\n\r\n### 2. X / 即刻可写角度\r\n\r\n默认给 3-5 条，具体看 `config.limits.x_angles`。\r\n\r\n每条包含：\r\n\r\n- 角度标题\r\n    \r\n- 为什么能写\r\n    \r\n- 适合发 X、即刻还是长文\r\n    \r\n- 一句可直接展开成帖子开头的话\r\n    \r\n- 对应原始链接\r\n    \r\n\r\n优先选择有冲突、有判断、有启发的角度。\r\n\r\n不要给“AI 正在改变世界”这种废物角度。\r\n\r\n好的角度应该像：\r\n\r\n- 大家都在追 Agent，但真正的机会可能不是 Agent 本身\r\n    \r\n- 独立开发者最该学的不是写代码，而是如何找到低成本分发入口\r\n    \r\n- 语言学习工具真正的机会，不是翻译，而是构建反馈闭环\r\n    \r\n- Vibe Coding 的问题不是不会开发，而是产品判断被提前外包给了模型\r\n    \r\n\r\n### 3. X 草稿\r\n\r\n默认给 2-4 条，具体看 `config.limits.x_drafts`。\r\n\r\n每条 80-180 字。\r\n\r\n要求：\r\n\r\n- 像能直接发\r\n    \r\n- 有明确观点\r\n    \r\n- 不要只是总结\r\n    \r\n- 不必刻意写成线程\r\n    \r\n- 可以有一点锋利感\r\n    \r\n- 不要过度鸡血\r\n    \r\n- 不要营销号腔\r\n    \r\n- 给一个建议标题或首句\r\n    \r\n- 带对应原始链接\r\n    \r\n\r\n每条草稿后可以附一句：\r\n\r\n适合延展方向：……\r\n\r\n用于提示后续是否可以写成长文。\r\n\r\n### 4. 产品 / 项目相关信号\r\n\r\n默认 3-5 条，具体看 `config.limits.product_signals`。\r\n\r\n更偏判断，不偏复述。\r\n\r\n重点回答：\r\n\r\n- 这条信号对 Maple 当前或未来产品有什么影响？\r\n    \r\n- 是否能启发 AI 产品、Agent 工具、翻译工具、简历工具、学习工具、个人内容系统、独立开发产品？\r\n    \r\n- 是功能机会、场景机会、分发机会、商业化机会，还是技术机会？\r\n    \r\n- 是否值得做 MVP？\r\n    \r\n- MVP 应该怎么缩小？\r\n    \r\n- 用户是谁？\r\n    \r\n- 用户为什么现在需要？\r\n    \r\n- 冷启动难点在哪里？\r\n    \r\n\r\n输出结构：\r\n\r\n- 信号\r\n    \r\n- 对 Maple 的意义\r\n    \r\n- 可能产品机会\r\n    \r\n- 最小验证动作\r\n    \r\n- 风险判断\r\n    \r\n- 原始链接\r\n    \r\n\r\n### 5. 市场需求与 MVP 机会\r\n\r\n默认 3-5 条，具体看 `config.limits.market_opportunities`。\r\n\r\n只收录能转成产品假设的内容。\r\n\r\n每条包含：\r\n\r\n- 需求信号\r\n    \r\n- 目标用户\r\n    \r\n- 痛点描述\r\n    \r\n- 现有替代方案\r\n    \r\n- 可做的 MVP\r\n    \r\n- 冷启动渠道\r\n    \r\n- 商业化可能性\r\n    \r\n- 不值得做的原因或最大风险\r\n    \r\n- 原始链接\r\n    \r\n\r\n必须现实，不要幻想。\r\n\r\n如果只是“看起来很酷”，但没有明确用户、场景、付费或分发路径，要直接指出。\r\n\r\n### 6. 技术趋势与工程判断\r\n\r\n默认 3-5 条，具体看 `config.limits.tech_signals`。\r\n\r\n重点关注：\r\n\r\n- LLM 能力边界变化\r\n    \r\n- Agent 框架变化\r\n    \r\n- AI Coding 工具变化\r\n    \r\n- 开源模型变化\r\n    \r\n- 推理成本变化\r\n    \r\n- 部署与工程实践\r\n    \r\n- RAG、微调、评测、模型选择\r\n    \r\n- 前端工程、Vercel、全栈产品开发范式\r\n    \r\n- 对独立开发者是否真的有用\r\n    \r\n\r\n每条包含：\r\n\r\n- 技术信号\r\n    \r\n- 发生了什么\r\n    \r\n- 对产品开发的影响\r\n    \r\n- 对独立开发者的影响\r\n    \r\n- 是否值得 Maple 学 / 用 / 暂时观望\r\n    \r\n- 原始链接\r\n    \r\n\r\n不要把技术新闻硬拗成产品机会。技术必须落到工程实践或产品判断上。\r\n\r\n### 7. 个人系统 / 语言学习启发\r\n\r\n默认 2-4 条，具体看 `config.limits.learning_signals`。\r\n\r\n重点关注：\r\n\r\n- 个人成长系统\r\n    \r\n- 知识管理\r\n    \r\n- 第二大脑\r\n    \r\n- 内容输出系统\r\n    \r\n- 习惯设计\r\n    \r\n- 英语学习\r\n    \r\n- 日语学习\r\n    \r\n- 多语言学习\r\n    \r\n- 输入法、沉浸法、影子跟读、间隔重复\r\n    \r\n- AI 辅助学习工作流\r\n    \r\n\r\n每条包含：\r\n\r\n- 启发点\r\n    \r\n- 为什么值得关注\r\n    \r\n- 如何转成 Maple 的个人系统\r\n    \r\n- 可以今天做什么\r\n    \r\n- 原始链接\r\n    \r\n\r\n降权鸡汤。只保留能执行、能验证、能复盘的方法。\r\n\r\n### 8. 下一步动作\r\n\r\n最多 3 条，具体看 `config.limits.action_items`。\r\n\r\n必须具体，可以今天就做。\r\n\r\n每条包含：\r\n\r\n- 动作\r\n    \r\n- 为什么做\r\n    \r\n- 预计产出\r\n    \r\n- 时间限制\r\n    \r\n\r\n好的动作示例：\r\n\r\n- 用今天的一个需求信号写一条 X，限制 20 分钟完成\r\n    \r\n- 从一个 Product Hunt 产品反推它的冷启动渠道，整理成 5 行笔记\r\n    \r\n- 选一个 AI Agent 信号，判断它是否能迁移到自己的翻译工具或简历工具\r\n    \r\n- 用一个语言学习方法设计 7 天英语 / 日语练习实验\r\n    \r\n- 从一个技术信号里选一个工具，做 30 分钟最小测试\r\n    \r\n\r\n不要写“持续关注”“深入研究”这种废话。那不叫行动，那叫拖延的精装修版。\r\n\r\n### 9. 原始链接索引\r\n\r\n如果配置要求输出 `raw_links`，只列本次输出实际引用过的链接。\r\n\r\n格式：\r\n\r\n- 标题\r\n    \r\n- 来源\r\n    \r\n- 链接\r\n    \r\n- 被用于哪个 section\r\n    \r\n\r\n不要列没有引用过的链接。\r\n\r\n## 输出质量检查\r\n\r\n生成前做一次内部检查：\r\n\r\n1. 有没有把低信号内容硬塞进来？\r\n    \r\n2. 有没有只复述，没有判断？\r\n    \r\n3. 有没有没有原始链接的引用？\r\n    \r\n4. 有没有看起来很热闹但对 Maple 没用的内容？\r\n    \r\n5. 有没有输出无法执行的空动作？\r\n    \r\n6. 有没有把技术新闻误判成产品机会？\r\n    \r\n7. 有没有把鸡汤误判成个人成长方法？\r\n    \r\n8. 有没有给出可写成 X / 即刻的明确观点？\r\n    \r\n9. 有没有给出能转成 MVP 或产品判断的信号？\r\n    \r\n10. 有没有明确说出风险和不值得做的地方？\r\n    \r\n\r\n如果某条内容无法通过检查，删掉它。\r\n\r\n## 最终要求\r\n\r\n- 默认中文输出\r\n    \r\n- 直接、清楚、有判断\r\n    \r\n- 不要为了完整而完整\r\n    \r\n- 宁可少，也不要水\r\n    \r\n- 不要编造\r\n    \r\n- 不要脑补\r\n    \r\n- 不要输出仓库宣传语\r\n    \r\n- 结尾不要加 “Generated through...” 之类内容\r\n    ",
+    "translate": "# Translation Prompt\r\n\r\n把内容翻成自然中文，不要翻译腔。\r\n\r\n这不是文学翻译，也不是逐字翻译，而是给 Maple 使用的中文 briefing 翻译。\r\n\r\n目标是让 Maple 快速理解：\r\n\r\n- 这段内容在说什么\r\n    \r\n- 哪些术语必须保留英文\r\n    \r\n- 哪些表达需要转成自然中文\r\n    \r\n- 哪些信息可能影响产品、内容、技术、增长或学习判断\r\n    \r\n\r\n## 翻译原则\r\n\r\n- 准确优先\r\n    \r\n- 自然其次\r\n    \r\n- 简洁第三\r\n    \r\n- 不要为了优雅牺牲原意\r\n    \r\n- 不要过度本地化导致信息失真\r\n    \r\n- 不要把技术概念翻成别扭中文\r\n    \r\n- 不要添加原文没有的信息\r\n    \r\n- 不要脑补作者意图\r\n    \r\n\r\n## 术语保留规则\r\n\r\n以下常用术语优先保留英文：\r\n\r\n- AI\r\n    \r\n- agent\r\n    \r\n- Agent\r\n    \r\n- AI Agent\r\n    \r\n- LLM\r\n    \r\n- API\r\n    \r\n- prompt\r\n    \r\n- token\r\n    \r\n- workflow\r\n    \r\n- distribution\r\n    \r\n- growth\r\n    \r\n- SEO\r\n    \r\n- SaaS\r\n    \r\n- Micro SaaS\r\n    \r\n- MVP\r\n    \r\n- RAG\r\n    \r\n- fine-tuning\r\n    \r\n- embedding\r\n    \r\n- benchmark\r\n    \r\n- open source\r\n    \r\n- model\r\n    \r\n- inference\r\n    \r\n- latency\r\n    \r\n- pricing\r\n    \r\n- onboarding\r\n    \r\n- retention\r\n    \r\n- funnel\r\n    \r\n- newsletter\r\n    \r\n- creator\r\n    \r\n- indie hacker\r\n    \r\n- build in public\r\n    \r\n- bootstrapped\r\n    \r\n- Product Hunt\r\n    \r\n- Hacker News\r\n    \r\n- Reddit\r\n    \r\n- X\r\n    \r\n- GitHub\r\n    \r\n- Vercel\r\n    \r\n- Cursor\r\n    \r\n- Claude Code\r\n    \r\n- LangChain\r\n    \r\n- Hugging Face\r\n    \r\n\r\n人名、公司名、产品名、项目名保留英文。\r\n\r\nURL 原样保留。\r\n\r\n## 中文表达规则\r\n\r\n- 语气像一个懂行的人在给朋友做 briefing\r\n    \r\n- 简洁，别啰嗦\r\n    \r\n- 不要翻译腔\r\n    \r\n- 不用破折号\r\n    \r\n- 不要滥用“赋能”“生态”“闭环”“抓手”“沉淀”等官话\r\n    \r\n- 不要把 every、things、stuff 这种词机械翻译出来\r\n    \r\n- 不要把英文长句硬翻成长中文长句，必要时拆句\r\n    \r\n- 如果原文语气锋利，中文也可以锋利\r\n    \r\n- 如果原文是技术说明，中文要清楚准确\r\n    \r\n- 如果原文是产品判断，中文要保留判断感\r\n    \r\n- 如果原文是增长方法，中文要保留动作感\r\n    \r\n\r\n## 特殊内容处理\r\n\r\n### 技术内容\r\n\r\n技术内容要保留关键术语，不要强行中文化。\r\n\r\n例如：\r\n\r\n- prompt engineering 不要硬翻成“提示工程学”，可以写成 prompt engineering\r\n    \r\n- inference cost 可以写成推理成本\r\n    \r\n- context window 可以写成上下文窗口\r\n    \r\n- latency 可以写成延迟\r\n    \r\n- evals 可以写成评测或 evals，视上下文而定\r\n    \r\n\r\n### 产品 / 增长内容\r\n\r\n产品和增长内容要保留动作和因果关系。\r\n\r\n不要把：\r\n\r\nThey changed onboarding to reduce drop-off.\r\n\r\n翻成：\r\n\r\n他们改变了入门流程以减少流失。\r\n\r\n更自然的翻法：\r\n\r\n他们调整了 onboarding，目的是减少用户在前几步流失。\r\n\r\n### 个人成长 / 学习内容\r\n\r\n个人成长和语言学习内容要避免鸡汤化。\r\n\r\n不要把方法论翻成口号。\r\n\r\n要保留：\r\n\r\n- 具体方法\r\n    \r\n- 适用场景\r\n    \r\n- 限制条件\r\n    \r\n- 执行动作\r\n    \r\n\r\n### 日语 / 英语学习内容\r\n\r\n如果涉及语言学习：\r\n\r\n- 语言示例尽量保留原文\r\n    \r\n- 语法点可以翻译解释\r\n    \r\n- 不要把学习方法翻成励志语录\r\n    \r\n- 如果有 English / Japanese 示例，保留原句，并给自然中文解释\r\n    \r\n\r\n## 输出要求\r\n\r\n直接输出翻译后的中文。\r\n\r\n不要加：\r\n\r\n- “以下是翻译”\r\n    \r\n- “这段话的意思是”\r\n    \r\n- “总结来说”\r\n    \r\n- “Generated through...”\r\n    \r\n\r\n如果原文中有明显不确定、歧义或上下文缺失，可以在译文后用一句话标注：\r\n\r\n注：这里的含义可能依赖上下文，不能完全确定。\r\n\r\n## 风格目标\r\n\r\n最终译文应该像：\r\n\r\n一个懂 AI 产品、独立开发、增长、技术和学习方法的人，把英文内容快速讲给 Maple 听。"
+  },
+  "highSignals": [
+    {
+      "title": "Every other product right now is \"an AI agent that does everything in your work & life & ...",
+      "author": "Zara Zhang",
+      "url": "https://x.com/zarazhangrui/status/2066936706281206165",
+      "type": "x_tweet",
+      "score": 1.034,
+      "summary": "Every other product right now is \"an AI agent that does everything in your work & life & integrates with everything.\" Cool, that's just Claude/Codex. If you want me to use your thing instead, it needs an opinion & a sou...",
+      "signalIntent": "both",
+      "needsReview": false,
+      "reviewReason": ""
+    },
+    {
+      "title": "It’s time to ship",
+      "author": "Guillermo Rauch",
+      "url": "https://x.com/rauchg/status/2067106499449565265",
+      "type": "x_tweet",
+      "score": 0.93,
+      "summary": "It’s time to ship",
+      "signalIntent": "product_signal",
+      "needsReview": false,
+      "reviewReason": "SHORT_TEXT"
+    },
+    {
+      "title": "🇧🇷World-changing AI companies are coming from Brazil. That’s why we’ve officially expan...",
+      "author": "Josh Woodward",
+      "url": "https://x.com/joshwoodward/status/2067025851829330076",
+      "type": "x_tweet",
+      "score": 0.838,
+      "summary": "🇧🇷World-changing AI companies are coming from Brazil. That’s why we’ve officially expanded our Google AI Futures Fund to Brazil, partnering with venture capital leader Monashees to launch the Gama Fund. We’re looking ...",
+      "signalIntent": "both",
+      "needsReview": false,
+      "reviewReason": ""
+    },
+    {
+      "title": "The real prize in the SpaceX-Cursor deal is the agentic harness that will become the core...",
+      "author": "Madhu Guru",
+      "url": "https://x.com/realmadhuguru/status/2066935654500671499",
+      "type": "x_tweet",
+      "score": 0.798,
+      "summary": "The real prize in the SpaceX-Cursor deal is the agentic harness that will become the core for automating all knowledge work at scale. Here’s what SpaceX is getting: 1. Production-grade agentic harness -planning, context...",
+      "signalIntent": "product_signal",
+      "needsReview": false,
+      "reviewReason": ""
+    },
+    {
+      "title": "Which leads to… Bowen’s differentiation of self Low differentiation = highly reactive to ...",
+      "author": "Garry Tan",
+      "url": "https://x.com/garrytan/status/2067100549775032702",
+      "type": "x_tweet",
+      "score": 0.787,
+      "summary": "Which leads to… Bowen’s differentiation of self Low differentiation = highly reactive to others' emotional cues, loses self in relationships, can't hold boundaries under pressure — collapses into \"we-ness\" (everyone mus...",
+      "signalIntent": "x_angle",
+      "needsReview": false,
+      "reviewReason": ""
+    },
+    {
+      "title": "Building intelligent apps for Apple platforms with Claude in the Foundation Models framework",
+      "author": "Claude Blog",
+      "url": "https://claude.com/blog/claude-for-foundation-models",
+      "type": "blog_post",
+      "score": 0.755,
+      "summary": "Today we&#x27;re releasing Foundation Models framework support for Claude through a new Swift package that lets Apple developers use Apple&#x27;s Foundation Models framework to call Claude for more complex workflows. Ap...",
+      "signalIntent": "product_signal",
+      "needsReview": false,
+      "reviewReason": ""
+    },
+    {
+      "title": "The Cursor deal is symbolically quite significant. It was effectively the first mega succ...",
+      "author": "Aaron Levie",
+      "url": "https://x.com/levie/status/2066908002809221496",
+      "type": "x_tweet",
+      "score": 0.749,
+      "summary": "The Cursor deal is symbolically quite significant. It was effectively the first mega success in the applied layer of AI. They firmly proved out the value proposition of having a deep domain focus, the role you play as a...",
+      "signalIntent": "both",
+      "needsReview": false,
+      "reviewReason": ""
+    },
+    {
+      "title": "One of the biggest questions in AI is how far behind open weights models remain from clos...",
+      "author": "Aaron Levie",
+      "url": "https://x.com/levie/status/2067070918300664161",
+      "type": "x_tweet",
+      "score": 0.739,
+      "summary": "One of the biggest questions in AI is how far behind open weights models remain from closed models at any given time. There are huge differences in market structures depending on whether open weights models remain 3 or ...",
+      "signalIntent": "both",
+      "needsReview": false,
+      "reviewReason": ""
+    },
+    {
+      "title": "发布了: 垂类数据是垂类AI应用和模型的壁垒？未必。 Adobe被Claude Design吊着打很说明问题。 AGI面前，不能用传统那套逻辑思考了。",
+      "author": "汗青HQ",
+      "url": "https://m.okjike.com/originalPosts/69f21ecbc2dc8bf83f8414c7",
+      "type": "jike_post",
+      "score": 0.716,
+      "summary": "垂类数据是垂类AI应用和模型的壁垒？未必。&lt;br&gt;Adobe被Claude Design吊着打很说明问题。&lt;br&gt;AGI面前，不能用传统那套逻辑思考了。",
+      "signalIntent": "product_signal",
+      "needsReview": false,
+      "reviewReason": ""
+    },
+    {
+      "title": "@WorkOS @mattpocockuk @zackproser also doing great. AIE audience LOVES the workos content...",
+      "author": "Swyx",
+      "url": "https://x.com/swyx/status/2067057648617538037",
+      "type": "x_tweet",
+      "score": 0.701,
+      "summary": "@WorkOS @mattpocockuk @zackproser also doing great. AIE audience LOVES the workos content, they are doing something right https://t.co/nLZTQyAk1i",
+      "signalIntent": "x_angle",
+      "needsReview": false,
+      "reviewReason": ""
+    },
+    {
+      "title": "Publishing a new tutorial to make Codex or Claude Code your personal advisor using a skil...",
+      "author": "Peter Yang",
+      "url": "https://x.com/petergyang/status/2067056979974160749",
+      "type": "x_tweet",
+      "score": 0.683,
+      "summary": "Publishing a new tutorial to make Codex or Claude Code your personal advisor using a skill with 4 files. Plus, I managed to save Fable's advice too before it got restricted 🥲 📌 Subscribe to get the tutorial tmr: https...",
+      "signalIntent": "both",
+      "needsReview": false,
+      "reviewReason": ""
+    },
+    {
+      "title": "You don’t have to chase the cool thing. Do whatever you’re already doing so well that it ...",
+      "author": "Zara Zhang",
+      "url": "https://x.com/zarazhangrui/status/2066994434953421226",
+      "type": "x_tweet",
+      "score": 0.649,
+      "summary": "You don’t have to chase the cool thing. Do whatever you’re already doing so well that it becomes the cool thing. The cool thing is rarely cool when it starts. It becomes cool because someone went deep on something every...",
+      "signalIntent": "neither",
+      "needsReview": false,
+      "reviewReason": ""
+    },
+    {
+      "title": "Quick one to set the stage: ☑️ 30 minute function invocations 🆕 24 hour sandbox lifetime...",
+      "author": "Guillermo Rauch",
+      "url": "https://x.com/rauchg/status/2067137678772937000",
+      "type": "x_tweet",
+      "score": 0.583,
+      "summary": "Quick one to set the stage: ☑️ 30 minute function invocations 🆕 24 hour sandbox lifetimes https://t.co/r69vntZpbf",
+      "signalIntent": "neither",
+      "needsReview": false,
+      "reviewReason": "HIGH_SOURCE_LOW_ENG"
+    }
+  ]
+}
