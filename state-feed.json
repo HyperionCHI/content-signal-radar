@@ -1,11 +1,9 @@
 {
   "seenTweets": {},
   "seenVideos": {
-    "4-sWFytOfRw": 1781748361235,
     "h5dlIPM0X18": 1781856527838
   },
   "seenArticles": {
-    "https://claude.com/blog/claude-for-foundation-models": 1781688549596,
     "https://claude.com/blog/artifacts-in-claude-code": 1781856530924,
     "https://www.anthropic.com/engineering/how-we-contain-claude": 1782028281894,
     "https://www.anthropic.com/engineering/april-23-postmortem": 1782028285818,
