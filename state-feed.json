@@ -1,11 +1,7 @@
 {
   "seenTweets": {},
-  "seenVideos": {
-    "9_0hs2sxHHo": 1784795992420,
-    "vNpcg_Ma-FA": 1784882124745
-  },
+  "seenVideos": {},
   "seenArticles": {
-    "https://claude.com/blog/artifacts-in-claude-code": 1784795998810,
     "https://www.anthropic.com/engineering/how-we-contain-claude": 1784967322191,
     "https://www.anthropic.com/engineering/april-23-postmortem": 1784967322914,
     "https://www.anthropic.com/engineering/managed-agents": 1784967323536,
