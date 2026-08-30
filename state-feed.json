@@ -1,10 +1,7 @@
 {
   "seenTweets": {},
-  "seenVideos": {
-    "KpOW9Pk4BUs": 1787467871947
-  },
+  "seenVideos": {},
   "seenArticles": {
-    "https://claude.com/blog/claude-for-foundation-models": 1787467872355,
     "https://claude.com/blog/claude-in-chrome-generally-available": 1787851883049,
     "https://claude.com/blog/cowork-built-in-browser": 1787851883684,
     "https://claude.com/blog/artifacts-in-claude-code": 1787851884276,
