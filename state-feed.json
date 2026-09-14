@@ -4,6 +4,9 @@
   "seenArticles": {
     "https://claude.com/blog/claude-in-chrome-generally-available": 1789299022766,
     "https://claude.com/blog/cowork-built-in-browser": 1789299023330,
-    "https://claude.com/blog/artifacts-in-claude-code": 1789299023901
+    "https://claude.com/blog/artifacts-in-claude-code": 1789299023901,
+    "https://www.anthropic.com/engineering/how-we-contain-claude": 1789388649186,
+    "https://www.anthropic.com/engineering/april-23-postmortem": 1789388649789,
+    "https://www.anthropic.com/engineering/managed-agents": 1789388650397
   }
 }
