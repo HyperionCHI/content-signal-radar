@@ -1,11 +1,13 @@
 {
-  "generatedAt": "2026-09-18T10:57:31.638Z",
+  "generatedAt": "2026-09-19T10:40:43.532Z",
   "lookbackHours": 72,
   "podcasts": [],
   "stats": {
     "podcastEpisodes": 0
   },
   "errors": [
-    "YouTube: Failed to get transcript for N1rjtDs8blY: HTTP 429"
+    "YouTube: Failed to fetch videos for Data Driven NYC: HTTP 429",
+    "YouTube: Failed to fetch videos for AI & I by Every: HTTP 429",
+    "YouTube: Failed to get transcript for V_9TCu_21SE: HTTP 429"
   ]
 }
